@@ -1,0 +1,13 @@
+<ion-view view-title="Communautés">
+  <ion-content>
+      <div class="list">
+        <a ng-repeat="community in communities" 
+           class="item item-thumbnail-left" href="#/app/room/{{community.id}}">
+		      <img src="../img/ionic.png">
+          <h2>{{ community.title }}</h2>
+          <p>{{ community.population }} personnes</p>
+		      <div class="button icon-right ion-chevron-right button-calm">Rejoindre la communauté</div>
+        </a>
+      </div>
+  </ion-content>
+</ion-view>

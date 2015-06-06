@@ -1,0 +1,38 @@
+<ion-view view-title="Ajouter musique">
+  <ion-content>
+    <div ng-controller="NewMusicCtrl">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Artiste</span>
+          <input type="text" placeholder="Nom de l'artiste" ng-model="song.group">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Chanson</span>
+          <input type="text" placeholder="Nom de la chanson" ng-model="song.title">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Type</span>
+          <input type="text" placeholder="Type de la chanson" ng-model="song.type">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Lien youtube</span>
+          <input type="text" placeholder="Url de youtube" ng-model="song.url">
+        </label>
+      </div>
+      <div align="center">
+        <button class="button button-large button-balanced" ng-click="addMusic(song)">
+          Ajouter
+        </button>
+        <button class="button button-large button-assertive" ng-click="cancelMusic(song)">
+          Annuler
+        </button>
+      </div>
+
+      <div class="list card">
+        <a class="item">
+          <span class="input-label">Lien à copier coller :</span>https://www.youtube.com/watch?v=O5_LSaVB8So
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCookies', 'youtube-embed'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,6 +29,40 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
+
+//****************************************************************
+
+  .state('app.community', {
+    url: "/community",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/community.html",
+        controller: 'CommunityCtrl'
+      }
+    }
+  })
+
+  .state('app.room', {
+    url: "/room/:roomId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/room.html",
+        controller: 'RoomCtrl'
+      }
+    }
+  })
+
+  .state('app.newMusic', {
+    url: "/newMusic",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/newMusic.html",
+        controller: 'NewMusicCtrl'
+      }
+    }
+  })
+
+//***************************************************************
 
   .state('app.search', {
     url: "/search",

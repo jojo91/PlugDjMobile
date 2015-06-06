@@ -1,9 +1,14 @@
 <ion-view view-title="Playlists">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
-      </ion-item>
-    </ion-list>
+  	<div class="list">
+      <a ng-repeat="playlist in playlists" 
+           class="item item-thumbnail-left" href="#/app/playlists/{{playlist.id}}">
+		    <img src="../img/ionic.png">
+        <h2>Artiste : {{ playlist.group }}</h2>
+        <p>Chanson : {{ playlist.title }}</p>
+        <p>Type : {{ playlist.type }}</p>
+		    <div class="button button-small icon-right ion-chevron-right button-calm">Ecouter la musique</div>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

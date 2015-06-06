@@ -1,5 +1,60 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="Musiques">
   <ion-content>
-    <h1>Playlist</h1>
+
+	<div class="list card">
+	
+	  <div class="item">
+  		<h2>Artiste</h2>
+    	<p>{{currentMusic.group}}</p>
+	  </div>
+
+	  <div class="item">
+	    <h2>Chanson</h2>
+    	<p>{{currentMusic.title}}</p>
+	  </div>
+
+	  <div class="item">
+	    <h2>Type</h2>
+    	<p>{{currentMusic.type}}</p>
+	  </div>
+	
+	  <div class="item item-body">
+			<youtube-video video-url="currentMusic.url" player="bestPlayer" player-width="'100%'" player-height="'300px'"></youtube-video>
+	  </div>
+	
+	  <div class="item" align="center">
+	  	<button class="button button-positive icon-left ion-play" ng-click="bestPlayer.playVideo()">
+  			Lecture
+			</button>
+			<button class="button button-positive icon-left ion-pause" ng-click="pauseVideo()">
+  			Pause
+			</button>
+			<button class="button button-positive icon-left ion-refresh" ng-click="bestPlayer.seekTo(0)">
+  			Restart
+			</button>
+	  </div>
+
+	  <div class="item" align="center">
+	  	<button class="button button-small button-balanced icon-left ion-volume-high" ng-click="setVolume(100)">
+  			100%
+			</button>
+			<button class="button button-small button-balanced icon-left ion-volume-medium" ng-click="setVolume(50)">
+  			50%
+			</button>
+			<button class="button button-small button-balanced icon-left ion-volume-low" ng-click="setVolume(25)">
+  			25%
+			</button>
+			<button class="button button-small button-balanced icon-left ion-volume-mute" ng-click="setVolume(0)">
+  			0%
+			</button>
+	  </div>
+
+	  <div class="item range">
+  		<i class="icon ion-volume-low"></i>
+  		<input type="range" name="volume" min="0" max="100" ng-model="data.volume">
+  		<i class="icon ion-volume-high"></i>
+		</div>
+	
+	</div>
   </ion-content>
 </ion-view>
